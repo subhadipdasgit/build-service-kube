@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-deployment
+  labels:
+    app: pod-deployment
+    type: front-end
+spec:
+  containers:
+  - name: mynginx3
+    image: subhadipdocker/exam:apacheexam3
