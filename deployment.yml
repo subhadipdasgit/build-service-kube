@@ -9,3 +9,18 @@ spec:
   containers:
   - name: mynginx3
     image: subhadipdocker/exam:apacheexam3
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: apacheservice
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    app: pod-deployment
+    type: front-end
+  ports:
+  - port: 8080
+    targetPort: 8080
+    nodePort: 30001
